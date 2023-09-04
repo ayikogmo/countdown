@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>countdown</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="countdown">
+            <div id="days">
+                <p id="remainingDays"></p>
+                <p class="label">days</p>
+            </div>
+            <div id="hours">
+                <p id="remainingHours"></p>
+                <p class="label">hours</p>
+            </div>
+            <div id="minutes">            
+                <p id="remainingMinutes"></p>
+                <p class="label">minutes</p>
+            </div>
+            <div id="seconds">
+                <p id="remainingSeconds"></p>
+                <p class="label">seconds</p>
+            </div>
+        </div>
+
+        <script>
+            let countdownDate = new Date("September 30, 2023 17:00:00").getTime();
+
+            let x = setInterval(
+                function() {
+
+                    let currentDate = new Date().getTime();
+
+                    let distance = countdownDate - currentDate;
+
+                    let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                    let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    let minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+                    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+
+                    document.getElementById("remainingDays").innerHTML = days + " ";
+                    document.getElementById("remainingHours").innerHTML = hours + " ";
+                    document.getElementById("remainingMinutes").innerHTML = minutes + " ";
+                    document.getElementById("remainingSeconds").innerHTML = seconds + " ";
+
+
+
+
+                    if (distance < 0 ) {
+                        clearInterval(x);
+                        document.getElementById("countdown").innerHTML = "EXPIRED";
+                    }
+                }, 1000);
+        </script>
+    </body>
+</html>

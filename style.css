@@ -1,0 +1,42 @@
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #161b40;
+    width: auto;
+    height: 100vh;
+}
+#countdown {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: auto;
+    font-size: 50px;
+    border: solid;
+    border-color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+#remainingDays, #remainingHours, #remainingMinutes, #remainingSeconds {
+    padding: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 15px;
+    margin-bottom: 5px;
+
+    font-family: "Times New Roman", Times, serif;
+    font: white;
+
+}
+
+.label {
+    font-size: 15px;
+    margin-top: 0;
+    color: white;
+}
+
+#days, #hours, #minutes, #seconds {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+}
